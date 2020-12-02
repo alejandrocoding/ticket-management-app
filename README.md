@@ -21,3 +21,15 @@ Build a ticket managing app, where the user can add, filter, assign, and complet
 ## Submitting your solution
 
 Please send us the link to your Stackblitz fork. We will continue to work on it during the pair-programming sessions. Please also indicate approximately how long you spent on the submission.
+
+## DELIVERY
+
+1/ The Angular app is delivered in the following URL: https://ticket-app-nrwl.netlify.app/tickets
+
+![GIF APP](https://media4.giphy.com/media/GXYmeTksapfTa0Jyqu/giphy.gif)
+
+2/ The Typescript problem is delivered in stackblitz in the following URL: https://stackblitz.com/edit/nrwl-test?file=index.ts
+
+![GIF TS](https://media.giphy.com/media/3S0RAgl0TXt14jFGtg/giphy.gif)
+
+
