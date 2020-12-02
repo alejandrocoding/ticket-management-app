@@ -1,0 +1,23 @@
+<mat-toolbar color="primary" class="mat-elevation-z8">
+    <button button mat-icon-button routerLink="/tickets">
+        <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span *ngIf="(ticket$ | withLoading | async) as ticketResponse">
+        <ng-template [ngIf]="ticketResponse.value">
+            TICKET #{{ ticketResponse.value.id }}: {{ ticketResponse.value.description }}
+        </ng-template>
+        <ng-template [ngIf]="!ticketResponse.value && !ticketResponse.loading">
+            TICKET NOT FOUND
+        </ng-template>
+    </span>
+</mat-toolbar>
+<mat-progress-bar [hidden]="!(loading$ | async)" mode="indeterminate"></mat-progress-bar>
+
+<div *ngIf="(ticket$ | withLoading | async) as ticketResponse">
+    <ng-template [ngIf]="ticketResponse.value">
+        <pre>{{ ticketResponse.value | json }}</pre>
+    </ng-template>
+    <ng-template [ngIf]="!ticketResponse.value && !ticketResponse.loading">
+        <h3 class="no-results">Sorry, this ticket was not found.</h3>
+    </ng-template>
+</div>

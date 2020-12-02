@@ -1,27 +1,23 @@
-# NrwlCodingAssignment
+# Coding Assignment
+The goal of this assignment is to showcase your ability to develop features and your coding style. Due to the time constraint you will have to prioritize what you work on, and have to try and balance cleanliness with just getting it done.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.0.
+Even though the app is small, one can easily spend the whole week working on it: perfecting styles, testing every single method, or carefully crafting every single line of code. Please don't! Do as much as you can in about two hours and share the results.
 
-## Development server
+The most important part of the interview will come after this one, when we look at the app together, talk about the decisions you have made, etc..
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Stackblitz vs local development
 
-## Code scaffolding
+You can work on the application directly in Stackblitz, or you can download the code and work on it locally in your own IDE.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Ticketing managing application
 
-## Build
+Build a ticket managing app, where the user can add, filter, assign, and complete tickets.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+* The app should have two screens: the list screen and the details screen. Please use the Angular router to manage the transitions between them.
+* Even though we tend to use NgRx for state management, you can use a different approach if you think it fits better.
+* Write a couple of tests. The goal here is not to build a production-quality app, so don't test every single detail. Two or three tests should be good enough.
+* Don't forget about error handling and race conditions. The API server has a random delay. If you bump it up to say 10 seconds, would the app still work correctly?
 
-## Running unit tests
+## Submitting your solution
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Please send us the link to your Stackblitz fork. We will continue to work on it during the pair-programming sessions. Please also indicate approximately how long you spent on the submission.

@@ -1,0 +1,47 @@
+<mat-toolbar color="primary" class="mat-elevation-z8">TICKETS</mat-toolbar>
+<mat-progress-bar [hidden]="!(loading$ | async)" mode="indeterminate"></mat-progress-bar>
+
+<div class="tickets-list">
+    <div class="search-box">
+        <mat-form-field fxFill appearance="outline">
+            <mat-label>Search Ticket</mat-label>
+            <input matInput [formControl]="search">
+            <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+    </div>
+
+    <div class="tickets" gdColumns="repeat(3, 1fr)" gdGap="25px">
+        <mat-card class="card" *ngFor="let ticket of tickets$ | async; tickets"
+            [ngClass]="{'completed': ticket.completed}">
+            <mat-card-header>
+                <mat-card-title>{{ ticket.description }}</mat-card-title>
+                <mat-card-subtitle>#{{ ticket.id }}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-progress-bar *ngIf="!(users$ | async); else matSelect" mode="indeterminate">
+                </mat-progress-bar>
+                <ng-template #matSelect>
+                    <mat-form-field fxFill appearance="outline">
+                        <mat-label>Assigned to:</mat-label>
+                        <mat-select [disabled]="ticket.completed" [ngModel]="ticket.assigneeId"
+                            (selectionChange)="assignTicket(ticket, $event.value)">
+                            <mat-option *ngFor="let user of users$ | async" [value]="user.id">
+                                {{user.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </ng-template>
+            </mat-card-content>
+            <mat-card-actions align="end">
+                <button mat-button *ngIf="!ticket.completed" (click)="completeTicket(ticket.id)">COMPLETE</button>
+                <button mat-button color="primary" (click)="goToDetails(ticket)">SEE MORE</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    <h3 class="no-results" *ngIf="(tickets$ | async)?.length === 0">Sorry, no ticket were found.</h3>
+</div>
+
+<button class="fab-btn" mat-fab color="accent" matTooltip="Add ticket" matTooltipShowDelay="2000"
+    (click)="openAddTicket()">
+    <mat-icon>add</mat-icon>
+</button>

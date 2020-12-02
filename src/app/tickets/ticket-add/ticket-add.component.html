@@ -1,0 +1,13 @@
+<h2 mat-dialog-title>ADD TICKET</h2>
+
+<mat-dialog-content>
+    <mat-form-field appearance="outline" fxFill>
+        <mat-label>Add a ticket description</mat-label>
+        <input matInput [formControl]="ticketDescription" (keydown.enter)="close()">
+    </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>CANCEL</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="ticketDescription.value">ADD</button>
+</mat-dialog-actions>

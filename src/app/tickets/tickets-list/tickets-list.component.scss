@@ -1,0 +1,30 @@
+@import "~@angular/material/theming";
+.tickets-list {
+    margin: 0 auto;
+    padding: 25px;
+    .search-box {
+        margin-bottom: 25px;
+    }
+    .tickets {
+        .card {
+            margin-bottom: 25px;
+            &.completed {
+                opacity: 0.3;
+                transition: 0.5s opacity ease-out;
+            }
+            &:hover {
+                @include mat-elevation(12);
+                @include mat-elevation-transition;
+            }
+        }
+    }
+    .no-results {
+        text-align: center;
+        font-style: italic;
+    }
+}
+.fab-btn {
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+}

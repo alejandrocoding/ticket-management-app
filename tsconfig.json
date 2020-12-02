@@ -19,7 +19,24 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@pipes": [
+        "./src/app/_common/pipes/index"
+      ],
+      "@constants": [
+        "./src/app/_shared/constants/index"
+      ],
+      "@helpers": [
+        "./src/app/_shared/helpers/index"
+      ],
+      "@interfaces": [
+        "./src/app/_shared/interfaces/index"
+      ],
+      "@services": [
+        "./src/app/_shared/services/index"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "strictInjectionParameters": true,
